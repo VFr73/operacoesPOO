@@ -1,0 +1,15 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+
+public class criaPasta {
+    public static Path obterCaminho(String nomeArquivo) throws IOException {
+        Path pastaDados = Paths.get("dados");
+        if(!Files.exists(pastaDados)) {
+            Files.createDirectories(pastaDados);
+        }
+        return pastaDados.resolve(nomeArquivo);
+    }
+}
